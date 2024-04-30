@@ -14,6 +14,8 @@
 		3756702E2BE1A91300C7E404 /* ServersFriendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3756702D2BE1A91300C7E404 /* ServersFriendTests.swift */; };
 		375670382BE1A91300C7E404 /* ServersFriendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670372BE1A91300C7E404 /* ServersFriendUITests.swift */; };
 		3756703A2BE1A91300C7E404 /* ServersFriendUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670392BE1A91300C7E404 /* ServersFriendUITestsLaunchTests.swift */; };
+		375670472BE1A93100C7E404 /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = 375670462BE1A93100C7E404 /* TODO.md */; };
+		375670492BE1A9AF00C7E404 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670482BE1A9AF00C7E404 /* Shift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		375670332BE1A91300C7E404 /* ServersFriendUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServersFriendUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		375670372BE1A91300C7E404 /* ServersFriendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersFriendUITests.swift; sourceTree = "<group>"; };
 		375670392BE1A91300C7E404 /* ServersFriendUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersFriendUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		375670462BE1A93100C7E404 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		375670482BE1A9AF00C7E404 /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +100,10 @@
 			children = (
 				3756701C2BE1A91000C7E404 /* ServersFriendApp.swift */,
 				3756701E2BE1A91000C7E404 /* ContentView.swift */,
+				375670482BE1A9AF00C7E404 /* Shift.swift */,
 				375670202BE1A91300C7E404 /* Assets.xcassets */,
 				375670222BE1A91300C7E404 /* Preview Content */,
+				375670462BE1A93100C7E404 /* TODO.md */,
 			);
 			path = ServersFriend;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375670472BE1A93100C7E404 /* TODO.md in Resources */,
 				375670242BE1A91300C7E404 /* Preview Assets.xcassets in Resources */,
 				375670212BE1A91300C7E404 /* Assets.xcassets in Resources */,
 			);
@@ -258,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3756701F2BE1A91000C7E404 /* ContentView.swift in Sources */,
+				375670492BE1A9AF00C7E404 /* Shift.swift in Sources */,
 				3756701D2BE1A91000C7E404 /* ServersFriendApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
