@@ -19,7 +19,24 @@ struct TipsView: View {
       List {
         ForEach(tips) { tip in
           NavigationLink(value: tip) {
-            Text(String(format: "%.2f", tip.cashTips))
+            
+            VStack(alignment: .leading) {
+              // TODO: Figure out date formatting here
+              //              Text(DateFormatter())
+              Text("Wed, Sep 12 2024")
+                .font(.caption)
+                .padding(.bottom, 10)
+              
+              HStack {
+                Text("$\(String(format: "%.2f", calcTotalTips(tip)))")
+                  .font(.headline)
+                
+                Spacer()
+                
+                Text(tip.shift?.name ?? "Unknown Shift")
+                  .font(.caption)
+              }
+            }
           }
         }
         .onDelete(perform: deleteTip)
@@ -32,6 +49,10 @@ struct TipsView: View {
         Button("Add Tip", systemImage: "plus", action: addTip)
       }
     }
+  }
+  
+  private func calcTotalTips(_ tip: Tip) -> Double {
+    return tip.cashTips + tip.creditTips - tip.tipInAmount - tip.tipOutAmount
   }
   
   func addTip() {
