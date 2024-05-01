@@ -11,7 +11,7 @@ import SwiftData
 struct TipsView: View {
   
   @Environment(\.modelContext) var modelContext
-  @State private var path = [Tip]()
+  @State private var path = NavigationPath()
   @Query var tips: [Tip]
   
   var body: some View {
@@ -25,7 +25,7 @@ struct TipsView: View {
       }
       .navigationTitle("Tips Overview")
       .navigationDestination(for: Tip.self) { tip in
-        EditTipView(tip: tip)
+        EditTipView(tip: tip, navPath: $path)
       }
       .toolbar {
         Button("Add Tip", systemImage: "plus", action: addTip)

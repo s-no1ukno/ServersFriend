@@ -6,47 +6,73 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct EditTipView: View {
+  @Environment(\.modelContext) var modelContext
   @Bindable var tip: Tip
+  @Binding var navPath: NavigationPath
+  
+  @Query(sort: [
+    SortDescriptor(\Shift.name),
+    SortDescriptor(\Shift.hourlyWage)
+  ]) var shifts: [Shift]
   
   var body: some View {
     Form {
-      Section("Tip Info") {
+      Section("Tips Earned") {
         HStack {
-          Text("Cash Tips")
-          Divider()
+          Text("Cash Tips").font(.caption)
           TextField("", value: $tip.cashTips, format: .currency(code: "USD"))
+          // TODO: Figure out how to get these to spread out, text far left, currency far right
         }
         HStack {
-          Text("Credit Tips")
-          Divider()
+          Text("Credit Tips").font(.caption)
           TextField("", value: $tip.creditTips, format: .currency(code: "USD"))
         }
+      }
+      
+      Section ("Shift Expenses") {
         HStack {
-          Text("Tip In Amount")
-          Divider()
+          Text("Tip In Amount").font(.caption)
           TextField("", value: $tip.tipInAmount, format: .currency(code: "USD"))
         }
         HStack {
-          Text("Tip Out Amount")
-          Divider()
+          Text("Tip Out Amount").font(.caption)
           TextField("", value: $tip.tipOutAmount, format: .currency(code: "USD"))
         }
       }
       .keyboardType(.decimalPad)
       
       Section("Total Income") {
-        Text("Total Income Earned: $\(calcTotalAsString())")
+        Text("$\(calcTotalAsString())")
+          .bold()
       }
-      
+
       Section("Shift") {
         // add shift functionality here (picker)
+        Picker("Shift", selection: $tip.shift) {
+          Text("Unknown Shift")
+            .tag(Optional<Shift>.none)
+
+          if !shifts.isEmpty {
+            Divider()
+            ForEach(shifts) {shift in
+              Text(shift.name)
+                .tag(Optional(shift))
+            }
+          }
+          
+        }
+        Button("Add A New Shift", action: addShift)
       }
       
     }
     .navigationTitle("Edit Tip")
     .navigationBarTitleDisplayMode(.inline)
+    .navigationDestination(for: Shift.self) {shift in
+      EditShiftView(shift: shift)
+    }
   }
   
   func calcTotalAsString() -> String {
@@ -54,6 +80,11 @@ struct EditTipView: View {
     return String(format: "%.2f", calculation)
   }
   
+  func addShift() {
+    let newShift = Shift(name: "", hourlyWage: 0, tipIn: false, tipOut: false)
+    modelContext.insert(newShift)
+    navPath.append(newShift)
+  }
 }
 
 //#Preview {
