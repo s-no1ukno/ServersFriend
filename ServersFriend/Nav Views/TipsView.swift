@@ -12,7 +12,7 @@ struct TipsView: View {
   
   @Environment(\.modelContext) var modelContext
   @State private var path = NavigationPath()
-  @Query var tips: [Tip]
+  @Query(sort: [SortDescriptor(\Tip.date)]) var tips: [Tip]
   
   var body: some View {
     NavigationStack(path: $path) {
@@ -34,9 +34,7 @@ struct TipsView: View {
             NavigationLink(value: tip) {
               
               VStack(alignment: .leading) {
-                // TODO: Figure out date formatting here
-                //              Text(DateFormatter())
-                Text("Wed, Sep 12 2024")
+                Text(tip.date, style: .date)
                   .font(.caption)
                   .padding(.bottom, 10)
                 
