@@ -43,3 +43,70 @@ and shifts data?
 Responsible for all of the user settings, as well as profile information.
 
 
+## Exploration
+
+**Data layout**
+
+All potential layouts
+
+- Job (Old Chicago)
+    - Position (Bartender)
+        - Shift
+            - Shift Review
+            - Shift Review
+    - Position (Server)
+        - Shift (Server 1)
+            - Shift Review
+            - Shift Review
+        - Shift (Server 2)
+            - Shift Review
+            - Shift Review
+            - Shift Review
+- Job (Buffalo Wild Wings)
+    - Position (Bartender)
+        - Shift (Bartender 2)
+            - Shift Review
+            - Shift Review
+
+**WHERE:**
+
+```swift
+class Job {
+    var name: String
+    var address: String?
+    var manager: String?
+
+    init (name:String, address: String? = nil, manager: String? = nil) {
+        name = self.name
+        address = self.address
+        manager = self.manager
+    }
+}
+
+class Position {
+    var name
+}
+
+// === OR ===
+
+class Shift {
+
+    struct Position {
+        name: String
+    }
+
+    struct Job {
+        name: String
+    }
+
+    var name: String
+    var hourlyWage: Double
+    var tipIn: Bool
+    var tipOut: Bool
+    var position: Position
+    var job: Job
+
+
+}
+```
+

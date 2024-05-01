@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct TipsView: View {
+  
+  @Environment(\.modelContext) var modelContext
+//  @State private var path = [Tip]()
+//  @Query var tips: [Tip]
+  
   var body: some View {
     NavigationStack {
-      VStack {
-        Image(systemName: "globe")
-          .imageScale(.large)
-          .foregroundStyle(.tint)
-        Text("Hello from Tips!")
+      List {
+        ForEach((0...10), id: \.self) {
+          Text("\($0)...")
+        }
       }
-      .padding()
       .navigationTitle("Tips Overview")
     }
   }
