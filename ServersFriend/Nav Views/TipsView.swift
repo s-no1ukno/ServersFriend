@@ -6,22 +6,43 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TipsView: View {
   
   @Environment(\.modelContext) var modelContext
-//  @State private var path = [Tip]()
-//  @Query var tips: [Tip]
+  @State private var path = [Tip]()
+  @Query var tips: [Tip]
   
   var body: some View {
-    NavigationStack {
+    NavigationStack(path: $path) {
       List {
-        ForEach((0...10), id: \.self) {
-          Text("\($0)...")
+        ForEach(tips) { tip in
+          NavigationLink(value: tip) {
+            Text(String(format: "%.2f", tip.cashTips))
+          }
         }
       }
       .navigationTitle("Tips Overview")
+      .navigationDestination(for: Tip.self) { tip in
+        EditTipView(tip: tip)
+      }
+      .toolbar {
+        Button("Add Tip", systemImage: "plus", action: addTip)
+      }
     }
+  }
+  
+  func addTip() {
+    let newTip = Tip(
+      cashTips: 0,
+      creditTips: 0,
+      tipInAmount: 0,
+      tipOutAmount: 0,
+      date: Date()
+    )
+    modelContext.insert(newTip)
+    path.append(newTip)
   }
 }
 

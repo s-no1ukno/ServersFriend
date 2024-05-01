@@ -22,7 +22,7 @@
 		375670522BE1ACFF00C7E404 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670512BE1ACFF00C7E404 /* ContentView.swift */; };
 		375670542BE1B52C00C7E404 /* EditShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670532BE1B52C00C7E404 /* EditShiftView.swift */; };
 		375670562BE1DF3800C7E404 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670552BE1DF3800C7E404 /* Tip.swift */; };
-		375670592BE2089C00C7E404 /* TipEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670582BE2089C00C7E404 /* TipEditView.swift */; };
+		375670592BE2089C00C7E404 /* EditTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670582BE2089C00C7E404 /* EditTipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,7 @@
 		375670512BE1ACFF00C7E404 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		375670532BE1B52C00C7E404 /* EditShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShiftView.swift; sourceTree = "<group>"; };
 		375670552BE1DF3800C7E404 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
-		375670582BE2089C00C7E404 /* TipEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipEditView.swift; sourceTree = "<group>"; };
+		375670582BE2089C00C7E404 /* EditTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,19 +113,15 @@
 		3756701B2BE1A91000C7E404 /* ServersFriend */ = {
 			isa = PBXGroup;
 			children = (
-				375670572BE1E98900C7E404 /* Models */,
+				3756704A2BE1AAC300C7E404 /* README.md */,
+				375670462BE1A93100C7E404 /* TODO.md */,
 				3756701C2BE1A91000C7E404 /* ServersFriendApp.swift */,
 				375670512BE1ACFF00C7E404 /* ContentView.swift */,
-				3756704A2BE1AAC300C7E404 /* README.md */,
-				3756701E2BE1A91000C7E404 /* TipsView.swift */,
-				375670582BE2089C00C7E404 /* TipEditView.swift */,
-				3756704B2BE1AC7200C7E404 /* CalendarView.swift */,
-				3756704D2BE1AC7A00C7E404 /* ShiftsView.swift */,
-				375670532BE1B52C00C7E404 /* EditShiftView.swift */,
-				3756704F2BE1AC8400C7E404 /* SettingsView.swift */,
+				3756705A2BE2130A00C7E404 /* Nav Views */,
+				3756705C2BE2131D00C7E404 /* Sub Views */,
+				375670572BE1E98900C7E404 /* Models */,
 				375670202BE1A91300C7E404 /* Assets.xcassets */,
 				375670222BE1A91300C7E404 /* Preview Content */,
-				375670462BE1A93100C7E404 /* TODO.md */,
 			);
 			path = ServersFriend;
 			sourceTree = "<group>";
@@ -162,6 +158,26 @@
 				375670482BE1A9AF00C7E404 /* Shift.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3756705A2BE2130A00C7E404 /* Nav Views */ = {
+			isa = PBXGroup;
+			children = (
+				3756701E2BE1A91000C7E404 /* TipsView.swift */,
+				3756704B2BE1AC7200C7E404 /* CalendarView.swift */,
+				3756704D2BE1AC7A00C7E404 /* ShiftsView.swift */,
+				3756704F2BE1AC8400C7E404 /* SettingsView.swift */,
+			);
+			path = "Nav Views";
+			sourceTree = "<group>";
+		};
+		3756705C2BE2131D00C7E404 /* Sub Views */ = {
+			isa = PBXGroup;
+			children = (
+				375670582BE2089C00C7E404 /* EditTipView.swift */,
+				375670532BE1B52C00C7E404 /* EditShiftView.swift */,
+			);
+			path = "Sub Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +313,7 @@
 			files = (
 				3756701F2BE1A91000C7E404 /* TipsView.swift in Sources */,
 				3756704E2BE1AC7A00C7E404 /* ShiftsView.swift in Sources */,
-				375670592BE2089C00C7E404 /* TipEditView.swift in Sources */,
+				375670592BE2089C00C7E404 /* EditTipView.swift in Sources */,
 				375670522BE1ACFF00C7E404 /* ContentView.swift in Sources */,
 				375670492BE1A9AF00C7E404 /* Shift.swift in Sources */,
 				375670502BE1AC8500C7E404 /* SettingsView.swift in Sources */,

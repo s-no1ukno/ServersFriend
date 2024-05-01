@@ -13,7 +13,7 @@ struct ServersFriendApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .modelContainer(for: Shift.self)
+        .modelContainer(for: Tip.self)
     }
   }
 }

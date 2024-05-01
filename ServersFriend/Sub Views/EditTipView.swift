@@ -7,18 +7,39 @@
 
 import SwiftUI
 
-struct TipEditView: View {
+struct EditTipView: View {
   @Bindable var tip: Tip
   
   var body: some View {
     Form {
-      Section {
-        TextField("Cash Tips", text: cashTipsProxy)
-        TextField("Credit Tips", text: creditTipsProxy)
-        Divider()
-        TextField("Tip In Amount", text: tipInAmountProxy)
-        TextField("Tip Out Amount", text: tipOutAmountProxy)
+      Section("Tip Info") {
+        HStack {
+          Text("Cash Tips")
+          Divider()
+          TextField("", value: $tip.cashTips, format: .currency(code: "USD"))
+        }
+        HStack {
+          Text("Credit Tips")
+          Divider()
+          TextField("", value: $tip.creditTips, format: .currency(code: "USD"))
+        }
+        HStack {
+          Text("Tip In Amount")
+          Divider()
+          TextField("", value: $tip.tipInAmount, format: .currency(code: "USD"))
+        }
+        HStack {
+          Text("Tip Out Amount")
+          Divider()
+          TextField("", value: $tip.tipOutAmount, format: .currency(code: "USD"))
+        }
       }
+      .keyboardType(.decimalPad)
+      
+      Section("Total Income") {
+        Text("Total Income Earned: $\(calcTotalAsString())")
+      }
+      
       Section("Shift") {
         // add shift functionality here (picker)
       }
@@ -28,47 +49,11 @@ struct TipEditView: View {
     .navigationBarTitleDisplayMode(.inline)
   }
   
-  var cashTipsProxy: Binding<String> {
-    Binding<String>(
-      get: { String(format: "%.02f", Double(tip.cashTips)) },
-      set: {
-        if let value = NumberFormatter().number(from: $0) {
-          tip.cashTips = value.doubleValue
-        }
-      }
-    )
+  func calcTotalAsString() -> String {
+    let calculation = tip.cashTips + tip.creditTips - tip.tipInAmount - tip.tipOutAmount
+    return String(format: "%.2f", calculation)
   }
-  var creditTipsProxy: Binding<String> {
-    Binding<String>(
-      get: { String(format: "%.02f", Double(tip.creditTips)) },
-      set: {
-        if let value = NumberFormatter().number(from: $0) {
-          tip.creditTips = value.doubleValue
-        }
-      }
-    )
-  }
-  var tipInAmountProxy: Binding<String> {
-    Binding<String>(
-      get: { String(format: "%.02f", Double(tip.tipInAmount)) },
-      set: {
-        if let value = NumberFormatter().number(from: $0) {
-          tip.tipInAmount = value.doubleValue
-        }
-      }
-    )
-  }
-  var tipOutAmountProxy: Binding<String> {
-    Binding<String>(
-      get: { String(format: "%.02f", Double(tip.tipOutAmount)) },
-      set: {
-        if let value = NumberFormatter().number(from: $0) {
-          tip.tipOutAmount = value.doubleValue
-        }
-      }
-    )
-  }
-
+  
 }
 
 //#Preview {
