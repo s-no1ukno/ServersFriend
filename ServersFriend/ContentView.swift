@@ -15,17 +15,16 @@ struct ContentView: View {
         .tabItem {
           Label("Home", systemImage: "house")
         }
-      
+
       CalendarView()
         .tabItem {
           Label("Calendar", systemImage: "calendar.badge.clock")
         }
-      
+
       ShiftsView()
         .tabItem {
           Label("Shifts", systemImage: "pencil.line")
         }
-        .modelContainer(for: Shift.self)
       
       SettingsView()
         .tabItem {

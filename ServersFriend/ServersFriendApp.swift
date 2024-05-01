@@ -10,9 +10,10 @@ import SwiftData
 
 @main
 struct ServersFriendApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .modelContainer(for: Shift.self)
     }
+  }
 }

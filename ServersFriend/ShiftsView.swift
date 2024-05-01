@@ -22,6 +22,7 @@ struct ShiftsView: View {
             Text(shift.name)
           }
         }
+        .onDelete(perform: deleteShift)
       }
       .navigationTitle("Shifts")
       .navigationDestination(for: Shift.self) { shift in
@@ -37,6 +38,13 @@ struct ShiftsView: View {
     let newShift = Shift(name: "", hourlyWage: 0.00, tipIn: false, tipOut: false)
     modelContext.insert(newShift)
     path.append(newShift)
+  }
+  
+  func deleteShift(at offsets: IndexSet) {
+    for offset in offsets {
+      let shift = shifts[offset]
+      modelContext.delete(shift)
+    }
   }
 }
 

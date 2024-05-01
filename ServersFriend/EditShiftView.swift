@@ -20,7 +20,7 @@ struct EditShiftView: View {
         // TODO: Add hourly wage here
       }
     }
-    .navigationTitle("Edit Person")
+    .navigationTitle("Edit Shift")
     .navigationBarTitleDisplayMode(.inline)
   }
 }

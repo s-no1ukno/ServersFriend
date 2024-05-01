@@ -21,6 +21,7 @@
 		375670502BE1AC8500C7E404 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3756704F2BE1AC8400C7E404 /* SettingsView.swift */; };
 		375670522BE1ACFF00C7E404 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670512BE1ACFF00C7E404 /* ContentView.swift */; };
 		375670542BE1B52C00C7E404 /* EditShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670532BE1B52C00C7E404 /* EditShiftView.swift */; };
+		375670562BE1DF3800C7E404 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670552BE1DF3800C7E404 /* Tip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3756704F2BE1AC8400C7E404 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		375670512BE1ACFF00C7E404 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		375670532BE1B52C00C7E404 /* EditShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShiftView.swift; sourceTree = "<group>"; };
+		375670552BE1DF3800C7E404 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				375670512BE1ACFF00C7E404 /* ContentView.swift */,
 				3756704A2BE1AAC300C7E404 /* README.md */,
 				3756701E2BE1A91000C7E404 /* TipsView.swift */,
+				375670552BE1DF3800C7E404 /* Tip.swift */,
 				3756704B2BE1AC7200C7E404 /* CalendarView.swift */,
 				3756704D2BE1AC7A00C7E404 /* ShiftsView.swift */,
 				375670532BE1B52C00C7E404 /* EditShiftView.swift */,
@@ -287,6 +290,7 @@
 				375670492BE1A9AF00C7E404 /* Shift.swift in Sources */,
 				375670502BE1AC8500C7E404 /* SettingsView.swift in Sources */,
 				375670542BE1B52C00C7E404 /* EditShiftView.swift in Sources */,
+				375670562BE1DF3800C7E404 /* Tip.swift in Sources */,
 				3756704C2BE1AC7200C7E404 /* CalendarView.swift in Sources */,
 				3756701D2BE1A91000C7E404 /* ServersFriendApp.swift in Sources */,
 			);
