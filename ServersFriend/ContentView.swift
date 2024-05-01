@@ -8,17 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+  var body: some View {
+    TabView {
+      
+      TipsView()
+        .tabItem {
+          Label("Home", systemImage: "house")
         }
-        .padding()
+      
+      CalendarView()
+        .tabItem {
+          Label("Calendar", systemImage: "calendar.badge.clock")
+        }
+      
+      ShiftsView()
+        .tabItem {
+          Label("Shifts", systemImage: "pencil.line")
+        }
+        .modelContainer(for: Shift.self)
+      
+      SettingsView()
+        .tabItem {
+          Label("Settings", systemImage: "gearshape")
+        }
+      
     }
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
