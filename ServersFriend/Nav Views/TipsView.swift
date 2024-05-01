@@ -16,30 +16,45 @@ struct TipsView: View {
   
   var body: some View {
     NavigationStack(path: $path) {
-      List {
-        ForEach(tips) { tip in
-          NavigationLink(value: tip) {
-            
-            VStack(alignment: .leading) {
-              // TODO: Figure out date formatting here
-              //              Text(DateFormatter())
-              Text("Wed, Sep 12 2024")
-                .font(.caption)
-                .padding(.bottom, 10)
+      Section {
+        HStack {
+          Text("Diagram 1")
+          Spacer()
+          Text("Diagram 2")
+        }
+        .padding(.horizontal, 50)
+        .frame(height: UIScreen.main.bounds.height / 3)
+        .font(.caption)
+      }
+      
+      Section {
+        List {
+          // TODO: Need to set up sorting/filtering here, to only grab tips within a certain date
+          ForEach(tips) { tip in
+            NavigationLink(value: tip) {
               
-              HStack {
-                Text("$\(String(format: "%.2f", calcTotalTips(tip)))")
-                  .font(.headline)
-                
-                Spacer()
-                
-                Text(tip.shift?.name ?? "Unknown Shift")
+              VStack(alignment: .leading) {
+                // TODO: Figure out date formatting here
+                //              Text(DateFormatter())
+                Text("Wed, Sep 12 2024")
                   .font(.caption)
+                  .padding(.bottom, 10)
+                
+                HStack {
+                  Text("$\(String(format: "%.2f", calcTotalTips(tip)))")
+                    .font(.headline)
+                  
+                  Spacer()
+                  
+                  Text(tip.shift?.name ?? "Unknown Shift")
+                    .font(.caption)
+                }
               }
             }
           }
+          .onDelete(perform: deleteTip)
         }
-        .onDelete(perform: deleteTip)
+
       }
       .navigationTitle("Tips Overview")
       .navigationDestination(for: Tip.self) { tip in

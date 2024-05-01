@@ -20,6 +20,7 @@ struct EditTipView: View {
   
   var body: some View {
     Form {
+      // FIXME: buggy behavior from the doubles here, typing and updating is erratic
       Section("Tips Earned") {
         HStack {
           Text("Cash Tips").font(.caption)
