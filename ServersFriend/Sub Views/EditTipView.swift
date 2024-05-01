@@ -68,6 +68,12 @@ struct EditTipView: View {
         Button("Add A New Shift", action: addShift)
       }
       
+      // TODO: Double check that this isn't overwriting on initial load
+      Section("Date") {
+        DatePicker("", selection: $tip.date, displayedComponents: .date)
+          .datePickerStyle(.wheel)
+      }
+      
     }
     .navigationTitle("Edit Tip")
     .navigationBarTitleDisplayMode(.inline)
