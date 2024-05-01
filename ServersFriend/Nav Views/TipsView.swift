@@ -22,6 +22,7 @@ struct TipsView: View {
             Text(String(format: "%.2f", tip.cashTips))
           }
         }
+        .onDelete(perform: deleteTip)
       }
       .navigationTitle("Tips Overview")
       .navigationDestination(for: Tip.self) { tip in
@@ -43,6 +44,12 @@ struct TipsView: View {
     )
     modelContext.insert(newTip)
     path.append(newTip)
+  }
+  func deleteTip(at offsets: IndexSet) {
+    for offset in offsets {
+      let tip = tips[offset]
+      modelContext.delete(tip)
+    }
   }
 }
 
