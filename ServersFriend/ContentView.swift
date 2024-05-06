@@ -16,7 +16,7 @@ struct ContentView: View {
           Label("Home", systemImage: "house")
         }
 
-      CalendarView()
+      CalendarNavView()
         .tabItem {
           Label("Calendar", systemImage: "calendar.badge.clock")
         }
