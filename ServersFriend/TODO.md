@@ -17,6 +17,9 @@ General overview of the tips that the user has earned per week and per month,
 as well as visualizations for the most profitable shifts and days of the week to
 work.
 
+- [ ] incorporate hourly wage field from shift into earnings for the shift review
+- [ ] change naming from tips to shift review -> tips
+
 
 
 ### Calendar View
@@ -29,6 +32,15 @@ visible by day per the calendar month.
 ### Shifts View
 
 General overview of all shift data, including CRUD functionality.
+
+- [ ] Break up shifts into sections by employer
+- [ ] add employer functionality
+  - [ ] create
+  - [ ] update
+  - [ ] delete
+- [ ] add hourly wage field to shifts
+- [ ] deny ability to add shift reviews past today's date
+
 
 #### Big Questions
 
