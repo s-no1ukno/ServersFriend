@@ -12,7 +12,7 @@ struct TipsView: View {
   
   @Environment(\.modelContext) var modelContext
   @State private var path = NavigationPath()
-  @Query(sort: [SortDescriptor(\Tip.date)]) var tips: [Tip]
+  @Query(sort: [SortDescriptor(\Tip.date, order: .reverse)]) var tips: [Tip]
   
   var body: some View {
     NavigationStack(path: $path) {
