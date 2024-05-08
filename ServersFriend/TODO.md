@@ -27,6 +27,8 @@ work.
 Large view being encompassed by a fullscreen calendar, which will have tip data
 visible by day per the calendar month.
 
+- [ ] Decide whether to use SwiftUICalendar or ElegantCalendar for the cal view
+
 
 
 ### Shifts View
