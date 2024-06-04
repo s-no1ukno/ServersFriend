@@ -33,13 +33,18 @@ visible by day per the calendar month.
 
 General overview of all shift data, including CRUD functionality.
 
-- [ ] Break up shifts into sections by employer
-- [ ] add employer functionality
-  - [ ] create
-  - [ ] update
-  - [ ] delete
-- [ ] add hourly wage field to shifts
-- [ ] deny ability to add shift reviews past today's date
+- [ ] Move all Shift/Position/Employer functionality to this module
+  - [ ] Set up Employers section with current employers listed
+    - [ ] Drag left -> delete function
+    - [ ] Drag right -> edit function
+  - [ ] Set up Positions section with current positions listed
+    - [ ] Drag left -> delete function
+    - [ ] Drag right -> edit function
+  - [ ] Set up Shifts section with current shifts listed
+    - [ ] Drag left -> delete function
+    - [ ] Drag right -> edit function
+
+<!--- [ ] deny ability to add shift reviews past today's date-->
 
 
 #### Big Questions
