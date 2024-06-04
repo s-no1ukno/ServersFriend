@@ -106,11 +106,13 @@ class Position {
 class Shift {
 
     struct Position {
-        name: String
+        id: UUID,
+        name: String,
     }
 
     struct Job {
-        name: String
+        id: UUID,
+        name: String,
     }
 
     var name: String
@@ -119,8 +121,7 @@ class Shift {
     var tipOut: Bool
     var position: Position
     var job: Job
-
-
+    
 }
 ```
 

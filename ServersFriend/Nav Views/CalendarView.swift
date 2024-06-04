@@ -50,6 +50,7 @@ struct CalendarNavView: View {
     date = date.addDay(value: -10)
     informations[date] = []
     informations[date]?.append(("Baseball", Color.green))
+    print("data", informations)
   }
   
   var body: some View {
