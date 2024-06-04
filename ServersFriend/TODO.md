@@ -33,6 +33,10 @@ visible by day per the calendar month.
 
 General overview of all shift data, including CRUD functionality.
 
+- Do we want to have data pages available on click of employer/position/shift here?
+  - this would allow for data segregation on a click, rather than setting up filters
+  - much simpler for the end user
+
 - [ ] Move all Shift/Position/Employer functionality to this module
   - [ ] Set up Employers section with current employers listed
     - [ ] Drag left -> delete function
