@@ -10,13 +10,18 @@ import SwiftData
 
 @Model
 class Position {
+  // info
   var name: String
   var wage: Double
-  var employer: Employer
   
-  init(name: String, wage: Double, employer: Employer) {
+  //relationships
+  var employer: Employer?
+  var shifts: [Shift]?
+  
+  init(name: String, wage: Double, employer: Employer? = nil, shifts: [Shift]? = nil) {
     self.name = name
     self.wage = wage
     self.employer = employer
+    self.shifts = shifts
   }
 }

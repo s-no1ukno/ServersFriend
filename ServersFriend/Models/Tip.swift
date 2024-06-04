@@ -10,11 +10,14 @@ import SwiftData
 
 @Model
 class Tip {
+  // info
   var cashTips: Double
   var creditTips: Double
   var tipInAmount: Double
   var tipOutAmount: Double
   var date: Date
+  
+  // relationships
   var shift: Shift?
   
   init(cashTips: Double, creditTips: Double, tipInAmount: Double,

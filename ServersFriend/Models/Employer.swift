@@ -10,7 +10,10 @@ import SwiftData
 
 @Model
 class Employer {
+  // info
   var name: String
+  
+  // relationships
   var positions: [Position]?
   
   init(name: String, positions: [Position]? = nil) {

@@ -15,7 +15,6 @@ struct EditTipView: View {
   
   @Query(sort: [
     SortDescriptor(\Shift.name),
-    SortDescriptor(\Shift.hourlyWage)
   ]) var shifts: [Shift]
   
   var body: some View {
@@ -78,7 +77,7 @@ struct EditTipView: View {
     .navigationTitle("Edit Tip")
     .navigationBarTitleDisplayMode(.inline)
     .navigationDestination(for: Shift.self) {shift in
-      EditShiftView(shift: shift)
+      EditShiftView(navPath: $navPath, shift: shift)
     }
   }
   
@@ -88,7 +87,7 @@ struct EditTipView: View {
   }
   
   func addShift() {
-    let newShift = Shift(name: "", hourlyWage: 0, tipIn: false, tipOut: false)
+    let newShift = Shift(name: "")
     modelContext.insert(newShift)
     navPath.append(newShift)
   }
