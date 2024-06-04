@@ -184,12 +184,20 @@
 		3756705C2BE2131D00C7E404 /* Sub Views */ = {
 			isa = PBXGroup;
 			children = (
+				3787B7632C0FA94600BB0A6D /* EditViews */,
+			);
+			path = "Sub Views";
+			sourceTree = "<group>";
+		};
+		3787B7632C0FA94600BB0A6D /* EditViews */ = {
+			isa = PBXGroup;
+			children = (
 				375670582BE2089C00C7E404 /* EditTipView.swift */,
 				375670532BE1B52C00C7E404 /* EditShiftView.swift */,
 				370E56032C0F878600D08B75 /* EditPositionView.swift */,
 				370E56052C0F8B9200D08B75 /* EditEmployerView.swift */,
 			);
-			path = "Sub Views";
+			path = EditViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
