@@ -11,7 +11,7 @@ import SwiftData
 struct ShiftsView: View {
   
   @Environment(\.modelContext) var modelContext
-  @State private var navPath = NavigationPath()
+  @State var navPath = NavigationPath()
 //  @Query var shifts: [Shift]
   @Query var employers: [Employer]
   @Query var positions: [Position]
@@ -20,7 +20,7 @@ struct ShiftsView: View {
 //  let noNameMsg = Text("No name specified").font(.system(size: 12)).italic()
 
   var body: some View {
-    NavigationStack {
+    NavigationStack(path: $navPath) {
       VStack {
         Text("Keep track of all of your job data here. Drag an object to the left to delete, and to the right to edit.")
           .padding(20)
@@ -50,17 +50,16 @@ struct ShiftsView: View {
             .onDelete(perform: deleteShift)
           }
         }
-        .navigationTitle("Job Data")
-        .navigationDestination(for: Employer.self) { emp in
-          Text("Employer")
-          emp.name.isEmpty ? Text("No name") : Text(emp.name)
-        }
-        .navigationDestination(for: Position.self) { pos in
-          Text("Position")
-        }
-        .navigationDestination(for: Shift.self) { shift in
-          Text("Shift")
-        }
+      }
+      .navigationTitle("Job Data")
+      .navigationDestination(for: Employer.self) { emp in
+        EmployerDataView(employer: emp)
+      }
+      .navigationDestination(for: Position.self) { pos in
+        PositionDataView(navPath: $navPath, position: pos)
+      }
+      .navigationDestination(for: Shift.self) { shift in
+        ShiftDataView(shift: shift)
       }
     }
   }

@@ -27,6 +27,9 @@
 		375670542BE1B52C00C7E404 /* EditShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670532BE1B52C00C7E404 /* EditShiftView.swift */; };
 		375670562BE1DF3800C7E404 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670552BE1DF3800C7E404 /* Tip.swift */; };
 		375670592BE2089C00C7E404 /* EditTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375670582BE2089C00C7E404 /* EditTipView.swift */; };
+		37CD7F5C2C0FAAEA002B3653 /* EmployerDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD7F5B2C0FAAEA002B3653 /* EmployerDataView.swift */; };
+		37CD7F5F2C0FAD02002B3653 /* PositionDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD7F5E2C0FAD02002B3653 /* PositionDataView.swift */; };
+		37CD7F612C0FAD0D002B3653 /* ShiftDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD7F602C0FAD0D002B3653 /* ShiftDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		375670532BE1B52C00C7E404 /* EditShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShiftView.swift; sourceTree = "<group>"; };
 		375670552BE1DF3800C7E404 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		375670582BE2089C00C7E404 /* EditTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTipView.swift; sourceTree = "<group>"; };
+		37CD7F5B2C0FAAEA002B3653 /* EmployerDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerDataView.swift; sourceTree = "<group>"; };
+		37CD7F5E2C0FAD02002B3653 /* PositionDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDataView.swift; sourceTree = "<group>"; };
+		37CD7F602C0FAD0D002B3653 /* ShiftDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,7 @@
 		3756705C2BE2131D00C7E404 /* Sub Views */ = {
 			isa = PBXGroup;
 			children = (
+				37CD7F5D2C0FACDE002B3653 /* DataViews */,
 				3787B7632C0FA94600BB0A6D /* EditViews */,
 			);
 			path = "Sub Views";
@@ -192,12 +199,22 @@
 		3787B7632C0FA94600BB0A6D /* EditViews */ = {
 			isa = PBXGroup;
 			children = (
-				375670582BE2089C00C7E404 /* EditTipView.swift */,
-				375670532BE1B52C00C7E404 /* EditShiftView.swift */,
-				370E56032C0F878600D08B75 /* EditPositionView.swift */,
 				370E56052C0F8B9200D08B75 /* EditEmployerView.swift */,
+				370E56032C0F878600D08B75 /* EditPositionView.swift */,
+				375670532BE1B52C00C7E404 /* EditShiftView.swift */,
+				375670582BE2089C00C7E404 /* EditTipView.swift */,
 			);
 			path = EditViews;
+			sourceTree = "<group>";
+		};
+		37CD7F5D2C0FACDE002B3653 /* DataViews */ = {
+			isa = PBXGroup;
+			children = (
+				37CD7F5B2C0FAAEA002B3653 /* EmployerDataView.swift */,
+				37CD7F5E2C0FAD02002B3653 /* PositionDataView.swift */,
+				37CD7F602C0FAD0D002B3653 /* ShiftDataView.swift */,
+			);
+			path = DataViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,9 +348,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37CD7F612C0FAD0D002B3653 /* ShiftDataView.swift in Sources */,
 				370E56002C0F7C0800D08B75 /* Position.swift in Sources */,
 				3756701F2BE1A91000C7E404 /* TipsView.swift in Sources */,
 				3756704E2BE1AC7A00C7E404 /* ShiftsView.swift in Sources */,
+				37CD7F5C2C0FAAEA002B3653 /* EmployerDataView.swift in Sources */,
 				375670592BE2089C00C7E404 /* EditTipView.swift in Sources */,
 				375670522BE1ACFF00C7E404 /* ContentView.swift in Sources */,
 				375670492BE1A9AF00C7E404 /* Shift.swift in Sources */,
@@ -341,6 +360,7 @@
 				375670502BE1AC8500C7E404 /* SettingsView.swift in Sources */,
 				375670542BE1B52C00C7E404 /* EditShiftView.swift in Sources */,
 				375670562BE1DF3800C7E404 /* Tip.swift in Sources */,
+				37CD7F5F2C0FAD02002B3653 /* PositionDataView.swift in Sources */,
 				3756704C2BE1AC7200C7E404 /* CalendarView.swift in Sources */,
 				370E56062C0F8B9200D08B75 /* EditEmployerView.swift in Sources */,
 				370E56022C0F7C7500D08B75 /* Employer.swift in Sources */,

@@ -59,6 +59,7 @@ struct TipsView: View {
         EditTipView(tip: tip, navPath: $path)
       }
       .toolbar {
+        Button("Delete All Data", systemImage: "trash.square.fill", action: deleteAll)
         Button("Add Tip", systemImage: "plus", action: addTip)
       }
     }
@@ -66,6 +67,10 @@ struct TipsView: View {
   
   private func calcTotalTips(_ tip: Tip) -> Double {
     return tip.cashTips + tip.creditTips - tip.tipInAmount - tip.tipOutAmount
+  }
+  
+  private func deleteAll() {
+    modelContext.container.deleteAllData()
   }
   
   func addTip() {
